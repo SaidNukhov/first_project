@@ -308,6 +308,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	height: 50vh;
+	margin: 10% 0 10% 0;
 }
 
 .featured_section_container { /* Пробую сделать адаптивную сетку для того чтобы разместить ровно текст и вместить большие фото во вложенный контейнер */
@@ -315,9 +316,39 @@ main {
 	grid-template-rows: repeat(2, auto); 
 	grid-template-columns: auto;
 	width: 80%;
+	height: auto;
 }
 
+.picture_div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	height: 35vh;
+}
 
+.featured_section img {
+	width: 100%;
+	height: 100%;
+}
+
+.picture_div div { /* styles for center div */
+	background-image: url(image/featured_picture_2.jpg);
+	background-size: cover;
+	height: 100%;
+}
+
+/* featured_text */
+.featured_section h2 {
+	font-size: 1.5em;
+	margin-bottom: 2%;
+}
+
+.featured_section p {
+	font-weight: 200;
+	width: 40vw;
+	margin-bottom: 5%;
+}
+/* featured_end */
 
 /*Media*/
 @media (min-width: 1200px) {
