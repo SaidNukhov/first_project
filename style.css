@@ -1,0 +1,381 @@
+* {
+	font-family: "Poppins";
+}
+
+/* Параметры для всех*/
+h4 { 
+	font-size: 1.2em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.only_back_image_p {
+	font-size: 0.8em;
+	font-weight: 200;
+	width: 80%;
+}
+/* Параметры для всех*/
+
+header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	justify-items: center;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 9vh;
+	list-style: none;
+}
+
+nav, ul {
+	display: flex;
+	align-items: center;
+}
+
+header button {
+	color: white;
+	background-color: #000;
+	border-radius: 1em;
+	width: 12vw;
+	padding: 1% 0 1% 0;
+	transition: color 0.3s ease;
+}
+
+header img {
+	width: 15vw;
+	height: 20%;
+}
+
+ul, li:not(:last-child) {
+	margin-right: 3vw
+}
+/*Header*/
+
+main {
+	overflow: hidden;
+}
+
+.section_h1 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 100%;
+	background-color: #ECE7E4;
+}
+
+.hero_div div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 15vmin 0 0 8vmin;
+}
+
+.hero_image img {
+	width: 100%;
+	height: 100%;
+}
+.hero_div h1 {
+	margin-top: 2vw;
+	font-size: 64px;
+	width: 70%;
+}
+.hero_div p {
+	margin-top: 2vw;
+	width: 85%;
+}
+
+.hero_div a {
+	margin: 4vw 0 2vh 2vw;
+	transition: color 0.3s ease;
+}
+
+.hero_div a:hover, header button:hover {
+	color: gray;
+}
+/*section_h1*/
+
+.our_firm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.our_firm_container {
+	width: 50%;
+	height: 50%;
+	margin: 7% 0 5% 0;
+	display: flex;
+}
+
+.our_firm span {
+	width: 150%;
+}
+
+.our_firm h2 {
+	font-size: 2em;
+}
+
+.text {
+	display: grid;
+	grid-template-rows: repeat(4, auto);
+	grid-template-columns: auto;
+}
+
+.text p:not(:first-child) {
+	margin-top: 4%;
+}
+
+.text p {
+	font-weight: 300;
+}
+
+.worker_div {
+	display: flex;
+	align-items: center;
+	margin-top: 5%;
+}
+
+.worker_div img {
+	width: 80px; 
+  	height: 80px;  
+  	border-radius: 50%;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+
+.worker_div h2 {
+	font-size: 1.5em;
+}
+
+.text .worker_div p { /* Worker margin p no need*/
+	margin: 0;
+}
+
+.worker_div span {
+	margin: 0 0 0 7%;
+}
+/*Our_firm*/
+
+.third_section {
+	background: url("image/third_section.jpg");
+	background-size: cover; 
+	background-repeat: no-repeat;
+  	width: 100%;
+  	height: 50vh;
+	margin-top: 5%;
+  	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.third_section div {
+	margin-right: 5%;
+}
+
+.third_section p {
+	width: 25vw;
+}
+/*Third_section*/
+
+.our_process {
+	background-color: white;
+	width: 100%;
+	height: 45vh;
+	display: flex;
+	align-items: center;
+}
+
+.our_process_container {
+	display: flex;	
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10%;
+	font-weight: 200;
+}
+
+.our_process_content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
+.our_item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.our_process h2 {
+	margin: 1% 0 2% 0;
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.our_item span {
+	margin: 5% 0 5% 0;
+}
+
+.our_item p {
+	align-items: center;
+	width: 80%;
+}
+
+.stairs_section {
+	background-image: url("image/stairs.jpg");
+	background-size: cover; 
+	background-repeat: no-repeat;
+  	width: 100%;
+	height: 50vh;
+	margin-top: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	text-transform: uppercase;
+}
+
+.stairs_section div {
+	margin-right: 5%;
+}
+
+.stairs_section p {
+	width: 20vw;
+}
+/* Stairs_section */
+
+.happy_customers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: #403E3B;
+	height: 40vh;
+}
+
+.happy_container {
+	height: 20vh;
+	width: 80%;
+	display: grid; 
+	align-items: center;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.brand_container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.brand_container:first-child {
+	margin-bottom: 15%;
+}
+
+/* Text */
+.happy_container span {
+	font-weight: 200;
+}
+
+.happy_container p {
+	font-weight: 200;
+}
+
+.happy_container h3 {
+	font-size: 2em;
+	margin-bottom: 4%;
+}
+/* happy_section-end */
+
+.whool {
+	background-image: url(image/whool.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+}
+
+.whool div {
+	margin-left: 5%;
+}
+/* whool_section-end */
+
+.featured_section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+
+.featured_section_container { /* Пробую сделать адаптивную сетку для того чтобы разместить ровно текст и вместить большие фото во вложенный контейнер */
+	display: grid;
+	grid-template-rows: repeat(2, auto); 
+	grid-template-columns: auto;
+	width: 80%;
+}
+
+
+
+/*Media*/
+@media (min-width: 1200px) {
+	.section_h1 {
+		height: 70vh;
+	}
+}
+
+@media (max-width: 1200px) {
+	.our_firm span {
+		width: 300%;
+	}
+	nav {
+		display: none;
+	}
+	.hero_div h1 {
+		line-height: 90%;
+	}
+	.hero_div div {
+		padding: 15vmin 0 0 2vw;
+	}
+}
+
+@media (max-width: 900px) {
+	.section_h1 {
+		grid-template-rows: 40% ;
+		grid-template-columns: auto;
+	}
+	.hero_div div {
+		padding: 15vmin 0 5vmin 10vmin;
+	}
+	header img {
+		width: 25vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.section_h1 {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 20px;
+	}
+	.our_item p { /* Недоработанный адаптивный дизайн */
+		display: none;
+	}
+	.our_firm_container {
+		flex-direction: column;
+	}
+	.text p {
+		margin-top: 4%;
+	}
+	header img {
+		width: 30vw;
+	}
+}
+@media (max-width: 600px) {
+	.third_section {
+		align-items: flex-start;
+		padding-left: 5vw;
+	} 
+}
