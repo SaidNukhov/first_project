@@ -401,6 +401,9 @@ main {
 	.section_h1 {
 		height: 70vh;
 	}
+	.div_div_ {
+		padding: 12%;
+	}
 }
 
 @media (max-width: 1200px) {
@@ -431,6 +434,10 @@ main {
 	}
 	header img {
 		width: 25vw;
+	}
+	/* Сделать section featured адаптивным при разрешении ниже 900px */
+	.div_div_ {
+		display: none;
 	}
 }
 
