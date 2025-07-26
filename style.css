@@ -496,16 +496,13 @@ main {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
+	background-color: #F7F7F7;
 }
 
 .right_div {
+	width: 80%;
 	display: flex;
 	justify-content: flex-end;
-}
-
-.social_network_span {
-	width: 20vw;
-	margin: 10% 0 0 30% ;
 }
 
 .social_network_span img {
