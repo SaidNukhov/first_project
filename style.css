@@ -491,6 +491,27 @@ main {
 }
 /* Text_end */
 
+.footer {
+	height: 15vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+}
+
+.right_div {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.social_network_span {
+	width: 20vw;
+	margin: 10% 0 0 30% ;
+}
+
+.social_network_span img {
+	margin-right: 1vw;
+}
+
 /*Media*/
 @media (min-width: 1200px) {
 	.section_h1 {
