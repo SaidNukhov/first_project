@@ -480,7 +480,7 @@ main {
 }
 
 .pre_footer h2 {
-	width: 80%;
+	width: 60%;
 	font-size: 2.5em;
 }
 .pre_footer span {
@@ -495,14 +495,28 @@ main {
 	height: 15vh;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
 	align-items: center;
 	background-color: #F7F7F7;
+}
+
+.left_div {
+	width: 80%;
+}
+
+.left_div img {
+	margin-bottom: 5%;
+}
+
+.left_div {
+	font-weight: 200;
 }
 
 .right_div {
 	width: 80%;
 	display: flex;
 	justify-content: flex-end;
+	margin-top: 10%;
 }
 
 .social_network_span img {
