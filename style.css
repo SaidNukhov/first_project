@@ -71,8 +71,12 @@ header li:hover {
 	color: gray;
 }
 
-header ul, header li:not(:last-child) {
+header ul, header li {
 	margin-right: 3vw
+}
+
+header li:nth-last-child(2) { /* Предпоследний элемент, чтобы не зажимать button в правый угол*/
+	margin: 0;
 }
 /*Header*/
 
@@ -557,7 +561,7 @@ main {
 	.burger_menu {
 		display: none;
 	}
-	.hidden_button {
+	.ul_button {
 		display: none;
 	}
 }
@@ -565,9 +569,6 @@ main {
 @media (max-width: 1200px) {
 	.our_firm span {
 		width: 300%;
-	}
-	header {
-		grid-template-columns: repeat(3, 50% 25% 25%);
 	}
 	nav {
 		display: none;
@@ -588,8 +589,8 @@ main {
 		list-style: none;
 		padding: 0;
 	}
-	nav ul li {
-		padding: 15px;
+	header li:nth-last-child(2) {
+		margin-right: 3vw;
 	}
 	.burger_menu.active + nav {
 		display: block;
@@ -611,6 +612,12 @@ main {
 	}
 	.hidden_button {
 		display: none;
+	}
+	.ul_button {
+		height: 3vh;
+		min-width: 10vw;
+		font-size: 0.6em;
+		font-weight: 500;
 	}
 	.section_h1 {
 		grid-template-rows: 40% ;
