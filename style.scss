@@ -1,0 +1,778 @@
+/* Максимум который можно вписать в * или в переменные, нужно реализовать
+	1.Для начала иду к ии, спрашиваю как пользоваться SCSS, чтобы сразу начать применять
+	2.Начало, анализирую по строчно CSS, выписываю сюда как бы я записал и укоротил код, упростил или оптимизировал
+    3.Решил выписать все с комментариями, чтобы иметь файл SCSS для поддержки
+    4.Часто встречающиеся элементы вынести в переменные
+    5.Использовать вложенность
+    6.Вынести media в partials файл    
+*/ 
+* { // По логике здесь должно быть больше свойств
+    font-family: "Poppins";
+}
+ 
+h4 { // Указываю для всех h4
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.only_back_image_p { // Для всех <p> что в пустых секциях с back-image
+    font-size: 0.8em;
+    font-weight: 200;
+    width: 80%;
+}
+
+header li:hover { // Много есть классов hover с таким же свойством, обьеденить для экономии кода
+	color: gray;
+}
+
+header { // Первое указание свойств header, буду нумеровать для выявления лишних строк
+    background-color: white;  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 9vh; 
+    list-style: none;     
+}
+
+.burger_menu { // Свойства для burger
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	margin: 20px;
+        .burger_line {
+            height: 2px;
+            width: 30px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+}
+
+nav, ul { // Вроде как локанично, только хотелось бы все дальнейшие корректировки видеть так же здесь
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.desktop_button, .ul_button {
+	border: none;
+	color: white;
+	background-color: #000;
+	border-radius: 1em; 
+	width: 12vw; 
+	padding: 1% 0 1% 0; 
+	transition: color 0.3s ease;
+}
+.ul_button { 
+        height: 3vh;
+        font-size: 0.8em;
+        flex-shrink: 0;
+        padding: 0 0 0 0; 
+}
+
+header ul, header li {
+	margin-right: 3vw
+}
+
+header li:nth-last-child(2) { /* Предпоследний элемент, чтобы не зажимать button в правый угол*/
+	margin: 0;
+}
+
+// header
+
+main {
+    overflow: hidden;
+}
+
+.left_div_first_section{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 100%;
+	background-color: #ECE7E4;
+}
+
+// Заменить название класса
+.hero_div div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 15vmin 0 0 8vmin;
+}
+
+// Выглядит как алкоголизм
+.hero_image img {
+	width: 100%;
+	height: 100%;
+}
+
+// Можно в начале файла указать h1 один раз 
+.hero_div h1 {
+	margin-top: 2vw;
+	font-size: 3.5em;
+	width: 70%;
+}
+
+// Название 
+.hero_div p {
+	margin-top: 2vw;
+	width: 83%;
+	font-weight: 300;
+}
+
+// Странные значения для margin, и название 
+.hero_div a {
+	margin: 4vw 0 2vh 2vw;
+	transition: color 0.3s ease;
+}
+
+// Выше должен был наткнуться на нужный комментарий, поменял название первого класса не забудь
+.hero_div a:hover, header button:hover {
+	color: gray;
+}
+
+// first_section или иначе
+
+// Это название секции нужно сменить на ясное 
+.our_firm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.our_firm_container {
+	width: 50%;
+	height: 50%;
+	margin: 7% 0 5% 0; // Значения для соотвествия макету
+	display: flex;
+}
+
+// Непонятно что это и для чего, точнее название 
+.our_firm span {
+	width: 150%;
+}
+
+// Явно указать в начале документа самое популярное значение для h2
+.our_firm h2 {
+	font-size: 2em;
+}
+
+// Какой текст?
+.text {
+	display: grid;
+	grid-template-rows: repeat(4, auto);
+	grid-template-columns: auto;
+}
+
+// Сменю название и станет ясно
+.text p:not(:first-child) {
+	margin-top: 4%;
+}
+
+// Соотвественно и тут
+.text p {
+	font-weight: 300;
+}
+
+// Я бы назвал так предпоследний div 
+.worker_div {
+	display: flex;
+	align-items: center;
+	margin-top: 5%;
+}
+
+// Нужно сделать это изображение адаптивным под мобильные, выглядит большим
+.worker_div img {
+	width: 80px; 
+  	height: 80px;  
+  	border-radius: 50%;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+
+// Второй h2, значения не совпали 
+.worker_div h2 {
+	font-size: 1.5em;
+}
+
+// После смены названий может и заиграет, предполагаю что можно указать яснее 
+.text .worker_div p { /* Worker margin p no need*/
+	margin: 0;
+}
+
+// Оставить комментарий
+.worker_div span {
+	margin: 0 0 0 7%;
+}
+
+// Our_firm-end
+
+.third_section {
+	background: url("image/third_section.jpg");
+	background-size: cover; // По логике нужно использовать contain, будет видно все изображение, а cover просто заполняет весь контейнер 
+	background-repeat: no-repeat;
+  	width: 100%;
+  	height: 50vh; // Сделать для всех секциий, если нужна другая величина указывать явно
+	margin-top: 5%;
+
+  	display: flex;
+	flex-direction: column; // Этот код используется более 1 раза, можно обьеденить с другой секцией 
+	align-items: flex-end; 
+	justify-content: center;
+}
+
+// Тоже встречается 2 раза 
+.third_section div {
+	margin-right: 5%;
+}
+
+// Проверить на повтор 
+.third_section p {
+	width: 25vw;
+}
+
+// Third_section-end
+
+
+.our_process {
+	background-color: white;
+	width: 100%;
+	height: 45vh;
+	display: flex;
+	align-items: center;
+}
+
+.our_process_container {
+	display: flex;	
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10%;
+	font-weight: 200;
+}
+
+.our_process_content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
+// Переименовать в out_process_content_div, идеальный пример где применить вложенность
+.our_item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+// Есть ли такой h2? Пусть весь текст будет в отдельном файле, использовать partials 
+.our_process h2 {
+	margin: 1% 0 2% 0;
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.our_item span {
+	margin: 5% 0 5% 0;
+}
+
+.our_item p {
+	align-items: center;
+	width: 80%;
+}
+
+.stairs_section {
+	background-image: url("image/stairs.jpg");
+	background-size: cover; // Та же история с cover 
+	background-repeat: no-repeat;
+  	width: 100%;
+	height: 50vh;  // Блок кода должен быть указан 1 раз в начале
+	margin-top: 10%;
+	display: flex;
+	flex-direction: column; // Проверить на повтор 
+	justify-content: center;
+	align-items: flex-end;
+	text-transform: uppercase; // Кажется это уже было, зачем то указано еще раз 
+}
+
+// Можно назвать stairs_section_container
+.stairs_section div {
+	margin-right: 5%;
+}
+
+// Не видел ли я тоже самое в third section
+.stairs_section p {
+	width: 20vw;
+}
+
+// Stairs_section-end
+
+// Переименовать в happy_section
+.happy_customers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: #403E3B;
+	height: 40vh;
+}
+
+// Переименовать в happy_section_container
+.happy_container {
+	height: 20vh;
+	width: 80%;
+	display: grid; 
+	align-items: center;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+// happy_brand_container 
+.brand_container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.brand_container:first-child {
+	margin-bottom: 15%;
+}
+
+/* Text */
+.happy_container span {
+	font-weight: 200;
+}
+
+// Кажется было
+.happy_container p {
+	font-weight: 200;
+}
+
+// Еще не встречал
+.happy_container h3 {
+	font-size: 2em;
+	margin-bottom: 4%;
+}
+
+/* happy_section-end */
+
+// Было кроме image конечно
+.whool {
+	background-image: url(image/whool.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+}
+
+.whool div {
+	margin-left: 5%;
+}
+
+/* whool_section-end */
+
+// В норме
+.featured_section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70vh;
+	background-color: #F7F7F7;	
+}
+
+.featured_section_container { 
+	display: grid;
+	grid-template-rows: repeat(2, auto); 
+	grid-template-columns: auto; // И так будет auto, проверить 
+	width: 80%;
+	margin: 5% 0 5% 0;
+	height: auto; // Это скорее всего нужно для адаптива
+}
+
+.featured_section_container span {
+	font-size: 0.8em;
+	cursor: pointer;
+	margin: 5% 0 0 43%; // Не всегда работает точно 
+}
+
+// Ты знаешь что делать
+.featured_section_container span:hover {
+	color: gray;
+}
+
+.picture_div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); 
+	grid-template-rows: auto;
+	height: 35vh;
+}
+
+// Кажется можно без высоты
+.featured_section img {
+	height: 100%;
+	width: 95%;
+}
+
+// Ничего непонятно, я про название класса
+.picture_div div { /* styles for center div */
+	background-image: url(image/featured_picture_2.jpg);
+	background-size: cover; // Может contain?
+	width: 95%;
+	height: 100%; // Нужно ли ?
+	overflow: hidden;
+}
+
+// Название!
+.div_div_ {
+	padding: 8%; 
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+// Кажется я такое уже видел, я про свойства
+.picture_div button {
+	font-size: 0.8em;
+	font-weight: 300;
+	color: white;
+	background-color: #000;
+	border-radius: 1em; // Опять же нужно ли ?
+	width: 9vw; 
+	padding: 2% 0 2% 0;
+	transition: color 0.3s ease;
+	border: none;
+	margin-top: 100%; // Это чтобы он уперся в дно дива, хм, может есть способ логичнее 
+}
+
+// Ну ты знаешь
+.picture_div button:hover {
+	color: gray;
+}
+
+/* featured_text */
+// Проверить на повторение 
+.featured_section h2 {
+	font-size: 1.5em;
+	margin-bottom: 2%;
+}
+.featured_section p {
+	font-weight: 300;
+	width: 40vw;
+	margin-bottom: 5%;
+}
+// Может тогда использовать другой тег ?
+.picture_div h4 {
+	letter-spacing: normal;
+	text-transform: none;
+	font-size: 1em;
+}
+.picture_div p {
+	margin: 0;
+	font-weight: 200;
+	font-size: 0.8em;
+}
+
+/* featured_end */
+
+// В целом название норм, но кажется тут не хватает section
+.our_team {
+	display: flex;
+	justify-content: center;
+}
+
+.our_team_container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 40vh;
+	justify-items: center;
+	width: 90%;
+	padding: 10% 5% 10% 5%;
+}
+
+// Мне кажется или это посыпется при изменении разрешения, я про все что ниже до текста
+.our_team_content {
+	display: flex;
+	flex-direction: column;
+	margin-left: 30%;
+}
+
+.worker_span {
+	display: flex;
+	align-items: center;	
+	margin-bottom: 20%;
+}
+
+.worker_rewiew {
+	width: 20vw;
+	margin-left: 8%;
+}
+
+.our_team img {
+	width: 80px; 
+  	height: 80px;  
+  	border-radius: 50%;
+  	object-fit: cover;
+  	flex-shrink: 0;
+	border: 3px solid #CEC4BC;
+}
+
+/* Text */
+
+.our_team_hero h2 {
+	font-size: 2em;
+	font-weight: 300;
+	margin: 0 0 5% 0;
+}
+
+.our_team_hero p {
+	font-size: 0.8em;
+	font-weight: 200;
+	margin: 0 0 15% 0;
+}
+
+.our_team_hero span {
+	cursor: pointer;
+	margin-left: 10%;
+}
+
+.our_team_hero span:hover {
+	color: gray;
+}
+
+/* Our_section-end */
+
+.pre_footer {
+	height: 30vh;
+	background-color: #CEC4BC;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pre_footer div {
+	width: 70%;
+}
+
+/* Text */
+.pre_footer p {
+	text-transform: uppercase;
+}
+
+.pre_footer h2 {
+	width: 60%;
+	font-size: 2.5em;
+}
+
+// Где то видел 
+.pre_footer span {
+	cursor: pointer;
+}
+
+// Да да
+.pre_footer span:hover {
+	color: gray;
+}
+
+/* Pre_footer-end */
+
+
+.footer {
+	height: 15vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+	align-items: center;
+	background-color: #F7F7F7;
+}
+
+.left_div {
+	width: 80%;
+}
+
+.left_div img {
+	margin-bottom: 5%;
+}
+
+.left_div {
+	font-weight: 200;
+}
+
+.right_div {
+	width: 80%;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10%;
+}
+
+.social_network_span img {
+	margin-right: 1vw;
+}
+
+// Media
+@media (min-width: 1200px) {
+	.section_h1 {
+		height: 70vh;
+	}
+	.div_div_ {
+		padding: 12%;
+	}
+	.burger_menu {
+		display: none;
+	}
+	.ul_button {
+		display: none;
+	}
+}
+
+@media (max-width: 1200px) {
+	.our_firm span {
+		width: 300%;
+	}
+	nav {
+		display: none;
+		background-color: white;
+		position: absolute;
+		top: 7vh;
+		left: 0;
+		height: 4vh;
+		width: 100%;
+		align-content: center;
+	}
+	.desktop_button {
+		display: none;
+	}
+	nav ul {
+		list-style: none;
+		padding: 0;
+		justify-content: center;
+	}
+	header li:nth-last-child(2) {  // Чтобы button не лип к li
+		margin-right: 3vw;
+	}
+	.burger_menu.active + nav {
+		display: block;
+	}
+	.hero_div h1 {
+		line-height: 90%;
+	}
+	.hero_div div {
+		padding: 15vmin 0 0 2vw;
+	}
+}
+
+@media (max-width: 900px) {
+	header {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ul_button {
+		height: 3vh;
+		min-width: 100px;
+		font-size: 0.8em;
+		flex-shrink: 0;
+	}
+	ul {
+		margin-left: 8vw;
+	}
+	header li { // Отступы увеличиваются для удобства нажатия 
+		margin-right: 8vw
+	}
+	header li:nth-last-child(2) { /* Предпоследний элемент, чтобы не зажимать button в правый угол*/
+		margin-right: 8vw;
+	}	
+	.section_h1 {
+		grid-template-rows: 40% ;
+		grid-template-columns: auto;
+	}
+	.section_h1 img {
+		display: none;
+	}
+	.hero_div div {
+		padding: 15vmin 0 5vmin 10vmin;
+	}
+	/* Сделать section featured адаптивным при разрешении ниже 900px */
+	.div_div_ {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.section_h1 {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 20px;
+	}
+	.our_item p { /* Недоработанный адаптивный дизайн */
+		display: none;
+	}
+	.our_firm_container {
+		flex-direction: column;
+	}
+	.text p {
+		margin-top: 4%;
+	}
+	header img {
+		width: 30vw;
+	}
+	.featured_section {
+		height: auto;
+	}
+	.featured_section_container {
+		justify-items: center;
+	}
+	.picture_div {
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: auto;
+		height: auto;
+		justify-items: center;
+	}
+	.featured_section img {
+		width: 80%;
+		height: 95%;
+		padding: 1% 0 1% 0;
+	}
+	.picture_div div {
+		width: 80%;
+		height: 95%;
+	}
+	.featured_section_container span {
+		margin: 0;
+	}
+	header li { // При этом разрешении удобочитаемо
+		font-size: 0.8em;
+	}
+	ul {
+		margin-left: 6vw;
+	}
+	header li { // При этом разрешении отступы нужны меньше
+		margin-right: 6vw
+	}
+	header li:nth-last-child(2) { /* Предпоследний элемент, чтобы не зажимать button в правый угол*/
+		margin-right: 6vw;
+	}
+}
+@media (max-width: 600px) {
+	.third_section {
+		align-items: flex-start;
+		padding-left: 5vw;
+	} 
+	.ul_button { // Мало места
+        display: none;
+    }
+}
+@media (max-width: 420px) {
+	.third_section {
+		align-items: flex-start;
+		padding-left: 5vw;
+	} 
+	.ul_button {
+		display: none;
+	}
+	header li {
+		margin-right: 4vw
+	}
+}
