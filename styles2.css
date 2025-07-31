@@ -1,7 +1,4 @@
 @charset "UTF-8";
-/* Максимум который можно вписать в * или в переменные, нужно реализовать
-	1.Понял что очень сложно корректировать код, лучше писать изначально с заделом на поддержку и изменения, как бы это базово не звучало    
-*/
 * {
   font-family: "Poppins";
 }
@@ -106,7 +103,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 15vmin 0 0 8vmin;
+  padding: 10vmin 0 0 8vmin;
 }
 
 .hero_right_container img {
@@ -130,13 +127,15 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 70vh;
+  min-height: 70vh;
+  height: auto;
 }
 
 .our_firm_container {
   display: flex;
   width: 50%;
   height: 80%;
+  padding: 5%;
 }
 
 .our_firm_container span {
@@ -149,7 +148,7 @@ main {
 
 .our_firm_container_div {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
 }
 
 .our_firm_container_div p:not(:first-child) {
@@ -199,7 +198,6 @@ main {
 
 .our_process {
   background-color: white;
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -208,20 +206,24 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
   font-weight: 200;
 }
 
 .our_process_content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 1fr;
 }
 
 .our_process_content_div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.our_process_content_div span {
+  margin: 1% 0 1% 0;
 }
 
 .our_process h2 {
@@ -230,12 +232,7 @@ main {
   font-weight: 300;
 }
 
-.our_process_content_div span {
-  margin: 5% 0 5% 0;
-}
-
 .our_process_content_div p {
-  align-items: center;
   width: 80%;
 }
 
@@ -243,7 +240,6 @@ main {
   background-image: url("image/stairs.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 10%;
   height: 55vh;
   display: flex;
   flex-direction: column;
@@ -292,13 +288,14 @@ main {
   font-weight: 200;
 }
 
-.happy_container p {
-  font-weight: 200;
-}
-
-.happy_container h3 {
+.happy_section_container h3 {
   font-size: 2em;
   margin-bottom: 4%;
+}
+
+.happy_section_container p {
+  font-weight: 200;
+  width: 90%;
 }
 
 /* happy_section-end */
@@ -325,16 +322,18 @@ main {
 }
 
 .featured_section_container {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 80%;
   margin: 5% 0 5% 0;
 }
 
 .featured_section_container span {
+  margin-top: 10px;
   font-size: 0.8em;
   cursor: pointer;
-  margin: 5% 0 0 43%;
 }
 
 .featured_section img {
@@ -346,7 +345,6 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  height: 35vh;
 }
 
 .featured_picture_content div { /* styles for center div */
@@ -368,7 +366,9 @@ main {
 .feature_center_div button {
   font-size: 0.8em;
   font-weight: 300;
+  min-width: 94px;
   width: 9vw;
+  flex-shrink: 0;
   padding: 2% 0 2% 0;
   margin-top: 100%;
 }
@@ -514,14 +514,14 @@ main {
 }
 
 @media (min-width: 1200px) {
-  .hero_section {
-    height: 70vh;
-  }
-  .hero_left_container .burger_menu {
+  .burger_menu {
     display: none;
   }
   .ul_button {
     display: none;
+  }
+  .hero_section {
+    height: 70vh;
   }
 }
 @media (max-width: 1200px) {
@@ -564,7 +564,7 @@ main {
     font-size: 0.8em;
     flex-shrink: 0;
   }
-  ul {
+  header ul {
     margin-left: 8vw;
   }
   header li {
@@ -574,60 +574,65 @@ main {
     margin-right: 8vw;
   }
   .hero_section {
-    grid-template-rows: 40%;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
   .hero_section img {
     display: none;
   }
   .hero_left_container div {
-    padding: 15vmin 0 5vmin 10vmin;
+    padding: 5vmin 0 5vmin 15vmin;
   }
-  /* Сделать section featured адаптивным при разрешении ниже 900px */
-  .div_div_ {
+  .our_firm_section {
+    min-height: 40vh;
+  }
+  .our_firm_container {
+    flex-direction: column;
+  }
+  .our_firm_container_div p {
+    margin-top: 4%;
+  }
+  .our_firm_container_div p:not(:first-child, :last-child) {
     display: none;
+  }
+  .our_firm_worker_div h2 {
+    font-size: 1em;
+  }
+  .our_firm_worker_div p {
+    font-size: 0.8em;
+  }
+  .our_firm_section p:first-child {
+    font-size: 0.9em;
+  }
+  .our_team_section img, .our_firm_worker_div img {
+    width: 60px;
+    height: 60px;
+  }
+  .our_process {
+    height: auto;
+    justify-content: center;
+    margin: 10% 0 10% 0;
+  }
+  .our_process_content_div p {
+    display: none;
+  }
+  .our_process_content_div span {
+    margin: 5% 0 1% 0;
+  }
+  .our_process_content_div {
+    min-width: 30vw;
+  }
+  .featured_section {
+    height: 60vh;
   }
 }
 @media (max-width: 768px) {
-  .hero_section {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-  }
-  .text p {
-    margin-top: 4%;
-  }
   header img {
-    width: 30vw;
-  }
-  .featured_section {
-    height: auto;
-  }
-  .featured_section_container {
-    justify-items: center;
-  }
-  .picture_div {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: auto;
-    height: auto;
-    justify-items: center;
-  }
-  .featured_section img {
-    width: 80%;
-    height: 95%;
-    padding: 1% 0 1% 0;
-  }
-  .picture_div div {
-    width: 80%;
-    height: 95%;
-  }
-  .featured_section_container span {
-    margin: 0;
+    width: 40vw;
   }
   header li {
     font-size: 0.8em;
   }
-  ul {
+  header ul {
     margin-left: 6vw;
   }
   header li {
@@ -636,26 +641,79 @@ main {
   header li:nth-last-child(2) { /* Предпоследний элемент, чтобы не зажимать button в правый угол*/
     margin-right: 6vw;
   }
+  .our_process_container h2 {
+    font-size: 1.5em;
+  }
+  .our_process_content_div img {
+    width: 70px;
+    height: 60px;
+  }
+  .third_section {
+    height: 40vh;
+  }
+  .stairs_section {
+    height: 40vh;
+  }
+  .stairs_section_container p {
+    width: 30vw;
+  }
+  .happy_section_container {
+    height: auto;
+  }
+  .happy_hero p {
+    display: none;
+  }
+  .happy_brand_container {
+    flex-direction: column;
+    margin: none;
+  }
+  .happy_brand_container img:not(:last-child) {
+    margin-bottom: 15%;
+  }
+  .happy_brand_container img {
+    width: 120px;
+  }
 }
 @media (max-width: 600px) {
-  .third_section {
-    align-items: flex-start;
-    padding-left: 5vw;
-  }
   .ul_button {
     display: none;
   }
-}
-@media (max-width: 420px) {
   .third_section {
     align-items: flex-start;
     padding-left: 5vw;
   }
+  .stairs_section {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .stairs_section_container {
+    margin: 5% 0 0 0;
+    width: 80%;
+  }
+  .stairs_section p {
+    width: 80%;
+    font-size: 0.6em;
+  }
+  .featured_section {
+    height: 50vh;
+  }
+  .featured_picture_content img {
+    display: none;
+  }
+  .featured_picture_content {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 420px) {
   .ul_button {
     display: none;
   }
   header li {
     margin-right: 4vw;
+  }
+  .third_section {
+    align-items: flex-start;
+    padding-left: 5vw;
   }
 }
 
