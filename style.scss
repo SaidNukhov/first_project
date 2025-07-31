@@ -242,6 +242,11 @@ main {
 	width: 80%;
 }
 
+.our_process_content_div img {
+	width: 90px;
+	height: 80px;
+}
+
 .stairs_section {
 	background-image: url("image/stairs.jpg");
 	background-size: cover;  
@@ -413,15 +418,16 @@ main {
 .our_team_section {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 60vh;
 }
 
 .our_team_container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 40vh;
 	justify-items: center;
 	width: 90%;
-	padding: 10% 5% 10% 5%;
+	height: 70%;
 }
 
 .our_team_content { 
@@ -433,6 +439,9 @@ main {
 .worker_span {
 	display: flex;
 	align-items: center;	
+}
+
+.worker_span:not(:last-child) {
 	margin-bottom: 20%;
 }
 
@@ -663,6 +672,12 @@ main {
 		height: 60vh;
 	}
 	// featured_section-end
+
+	// Our_team_section
+	.our_team_section {
+		height: 40vh;
+	}
+	// Our_team_section-end
 }
 
 @media (max-width: 768px) {
@@ -707,6 +722,12 @@ main {
 	}
 	// stairs_section-end
 
+	// featured_section
+	.featured_section {
+		height: 50vh;
+	}
+	// featured_section-end
+
 	// happy_section
 	.happy_section_container {
 		height: auto;
@@ -725,6 +746,18 @@ main {
 		width: 120px;
 	}
 	// happy_section-end
+
+	// Our_team_section
+	.worker_rewiew p {
+		display: none;
+	}
+	// Our_team_section-end
+
+	// pre_footer 
+	.pre_footer {
+		font-size: 0.8em;
+	}
+	// pre_footer-end
 }
 @media (max-width: 600px) {
 	// header
@@ -775,6 +808,14 @@ main {
 	}
 	// header-end
 	
+	* {
+		font-size: 0.8rem;
+	}
+	
+	.our_team_section {
+		height: 50vh;
+	}
+
 	.third_section {
 		align-items: flex-start;
 		padding-left: 5vw;

@@ -236,6 +236,11 @@ main {
   width: 80%;
 }
 
+.our_process_content_div img {
+  width: 90px;
+  height: 80px;
+}
+
 .stairs_section {
   background-image: url("image/stairs.jpg");
   background-size: cover;
@@ -401,15 +406,16 @@ main {
 .our_team_section {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 60vh;
 }
 
 .our_team_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 40vh;
   justify-items: center;
   width: 90%;
-  padding: 10% 5% 10% 5%;
+  height: 70%;
 }
 
 .our_team_content {
@@ -421,6 +427,9 @@ main {
 .worker_span {
   display: flex;
   align-items: center;
+}
+
+.worker_span:not(:last-child) {
   margin-bottom: 20%;
 }
 
@@ -624,6 +633,9 @@ main {
   .featured_section {
     height: 60vh;
   }
+  .our_team_section {
+    height: 40vh;
+  }
 }
 @media (max-width: 768px) {
   header img {
@@ -657,6 +669,9 @@ main {
   .stairs_section_container p {
     width: 30vw;
   }
+  .featured_section {
+    height: 50vh;
+  }
   .happy_section_container {
     height: auto;
   }
@@ -672,6 +687,12 @@ main {
   }
   .happy_brand_container img {
     width: 120px;
+  }
+  .worker_rewiew p {
+    display: none;
+  }
+  .pre_footer {
+    font-size: 0.8em;
   }
 }
 @media (max-width: 600px) {
@@ -710,6 +731,12 @@ main {
   }
   header li {
     margin-right: 4vw;
+  }
+  * {
+    font-size: 0.8rem;
+  }
+  .our_team_section {
+    height: 50vh;
   }
   .third_section {
     align-items: flex-start;
