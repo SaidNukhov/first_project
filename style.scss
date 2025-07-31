@@ -136,7 +136,7 @@ main {
 	display: flex;
 	width: 50%;
 	height: 80%;
-	padding: 5%;
+	padding: 5% 5% 5% 10%;
 }
 
 .our_firm_container span {
@@ -185,6 +185,7 @@ main {
 	background-size: cover ;  
 	background-repeat: no-repeat;
   	width: 100%;
+	height: 70vh;
   	display: flex;
 	flex-direction: column;
 	align-items: flex-end; 
@@ -218,6 +219,7 @@ main {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 1fr;
+	width: 100%;
 }
 
 // Переименовано из our_item
@@ -251,7 +253,7 @@ main {
 	background-image: url("image/stairs.jpg");
 	background-size: cover;  
 	background-repeat: no-repeat;
-	height: 55vh;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;  
 	justify-content: center;
@@ -318,6 +320,7 @@ main {
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
+	height: 70vh;
 	display: flex;
 	align-items: center;
 }
@@ -332,7 +335,7 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 70vh;
+	height: auto;
 	background-color: #F7F7F7;	
 }
 
@@ -586,6 +589,24 @@ main {
 		padding: 10vmin 0 0 5vw;
 	}
 	//hero_section-end
+
+	// third_section 
+	.third_section {
+		height: 50vh;
+	}
+	// third_section-end
+
+	// stairs_section
+	.stairs_section {
+		height: 50vh;
+	}
+	// stairs_section-end
+	
+	// whool_section
+	.whool_section {
+		height: 50vh;
+	}
+	// whool_section-end
 }
 
 @media (max-width: 900px) {	
@@ -656,6 +677,7 @@ main {
 		justify-content: center;
 		margin: 10% 0 10% 0;
 	}
+
 	.our_process_content_div p {
 		display: none;
 	}
@@ -714,9 +736,6 @@ main {
 	}
 
 	// stairs_section
-	.stairs_section {
-		height: 40vh;
-	}
 	.stairs_section_container p {
 		width: 30vw;
 	}
